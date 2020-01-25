@@ -7,6 +7,14 @@ const height = 20; // width and height dimensions of the board
 
 const gol = new GameOfLife(width, height);
 
+console.log(gol.makeBoard())
+// console.log(gol.getCell(1,0))
+// console.log(gol.setCell(0,1,0))
+// console.log(gol.getCell(1,0))
+// console.log(gol.toggleCell(1,0))
+// console.log(gol.getCell(1,0))
+// console.log(gol.livingNeighbors(6,6))
+console.log(gol.tick())
 
 /**
  * create a table and append to the DOM
@@ -33,6 +41,7 @@ for (let h = 0; h < height; h++) {
   }
   table.append(tr);
 }
+
 document.getElementById("board").append(table);
 
 
