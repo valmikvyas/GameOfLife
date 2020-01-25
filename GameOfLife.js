@@ -6,6 +6,24 @@ class GameOfLife {
   }
 
   /**
+   * Returns a Random 2D Array
+   */
+
+  randomize() {
+    const newArray = [];
+    for (let h = 0; h < this.height; h++) {
+      const rows = [];
+
+      for (let w = 0; w < this.width; w++) {
+        rows.push(Math.round(Math.random()));
+      }
+      newArray.push(rows);
+    }
+
+    return newArray;
+  }
+
+    /**
    * Returns a 2D Array
    */
 
@@ -16,21 +34,10 @@ class GameOfLife {
 
       for (let w = 0; w < this.width; w++) {
         rows.push(1);
-        // We'll put the coordinates on the cell
-        // Element itself (using dataset),
-        // letting us fetch it in a click listener later.
       }
       newArray.push(rows);
     }
-    // TODO: Create and return an 2D Array
-    // with `this.heigh` as rows and `this.width` as cols.
-    // For example, given a height of 4 and a width of 3, it will generate:
-    // [
-    //  [0, 0, 0],
-    //  [0, 0, 0],
-    //  [0, 0, 0],
-    //  [0, 0, 0],
-    // ]
+
     return newArray;
   }
 
@@ -45,8 +52,7 @@ class GameOfLife {
    */
 
   getCell(row, col) {
-    if (this.coordinateValidator(row, col)) return  this.board[row][col]
-   
+    if (this.coordinateValidator(row, col)) return this.board[row][col];
   }
 
   /**
